@@ -6,11 +6,9 @@ const Main = () => {
     const ingredientsInnerHtml = ingredients.map(oneIngredient => (<li key={oneIngredient}>{oneIngredient}</li>))
     
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const formData = new FormData(e.currentTarget)
+    const handleSubmit = (formData) => {
         const addedIngr = formData.get("ingredient")
-        console.log(ingredients)
+        console.log(addedIngr)
         // ingredients.push(addedIngr) //the vanilla way of adding items
         //     const ul = document.getElementById("ingredients-ul");
         //     const li = document.createElement("li");
@@ -21,7 +19,7 @@ const Main = () => {
 
   return (
     <main>
-      <form className="add-ingredient-form" onSubmit={handleSubmit}>
+      <form className="add-ingredient-form" action={handleSubmit}> {/*SUPER IMPORTANT TO HAVE ACTION and not onsubmit*/}
         <input
           type="text"
           placeholder="e.g. oregano"
