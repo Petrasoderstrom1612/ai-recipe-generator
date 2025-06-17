@@ -3,7 +3,7 @@ import Recipe from "./Recipe"
 import IngredientsSection from "./IngredientsSection";
 import { getRecipeFromMistral } from "../ai";
 
-
+console.log("Token:", import.meta.env.VITE_HF_ACCESS_TOKEN)
 
 const Main = () => {
     const [ingredients, setIngredients] = React.useState([])
