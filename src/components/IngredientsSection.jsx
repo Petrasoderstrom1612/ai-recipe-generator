@@ -1,6 +1,6 @@
 import React from 'react'
 
-const IngredientsSection = ({ingredients, showRecipe}) => {
+const IngredientsSection = ({ingredients, showRecipe, recipeReference}) => {
 
 const ingredientsInnerHtml = ingredients.map(oneIngredient => (<li key={oneIngredient}>{oneIngredient}</li>))
 
@@ -13,7 +13,7 @@ const ingredientsInnerHtml = ingredients.map(oneIngredient => (<li key={oneIngre
         </ul>
       </section>
       {ingredients.length > 2 && 
-        <div className="get-recipe-container">
+        <div className="get-recipe-container" ref={recipeReference}>
             <div>
                 <h3>Ready for a recipe?</h3>
                 <p>Generate a recipe from your list of ingredients.</p>
