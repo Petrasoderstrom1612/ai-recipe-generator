@@ -14,7 +14,12 @@ const Main = () => {
 
     React.useEffect(()=>{
         if (recipeReference.current !== null && finalRecipe !== ""){
-        recipeReference.current.scrollIntoView()
+        recipeReference.current.scrollIntoView({behavior: "smooth"})
+        //  const yCoord = recipeSection.current.getBoundingClientRect().top + window.scrollY
+        //     window.scroll({
+        //         top: yCoord,
+        //         behavior: "smooth"
+        //     }) ...FOR FRAMEWORKS
         }
     },[finalRecipe])
 
